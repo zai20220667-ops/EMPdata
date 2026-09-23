@@ -10,4 +10,4 @@ RUN uv sync --frozen
 COPY . .
 
 EXPOSE 8501
-CMD ["uv", "run", "streamlit", "run", "app.py", "--server.address=0.0.0.0"]q
+CMD ["uv", "run", "streamlit", "run", "app.py", "--server.address=0.0.0.0", "--server.headless=true"]

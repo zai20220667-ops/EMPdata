@@ -1,4 +1,5 @@
 import streamlit as st
+import pandas as pd
 from src.panda import EmployeeLoader, EmployeeAnalysis
 from pathlib import Path
 
@@ -17,10 +18,11 @@ analyzer = EmployeeAnalysis(df)
 
 st.subheader("Gender Distribution")
 gender_counts = analyzer.count_gender()
-st.bar_chart(gender_counts)
+st.bar_chart(pd.Series(gender_counts))
 
 st.subheader("Top Job Titles")
-st.bar_chart(analyzer.top_jobs())
+job_counts = analyzer.top_jobs()
+st.bar_chart(pd.Series(job_counts))
 
 st.metric("Average Age", f"{analyzer.avg_age():.1f}")
 st.metric("Median Age", f"{analyzer.median_age():.0f}")

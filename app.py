@@ -17,10 +17,10 @@ analyzer = EmployeeAnalysis(df)
 
 st.subheader("Gender Distribution")
 gender_counts = analyzer.count_gender()
-st.write(gender_counts)
+st.bar_chart(gender_counts)
 
 st.subheader("Top Job Titles")
-st.write(analyzer.top_jobs())
+st.bar_chart(analyzer.top_jobs())
 
 st.metric("Average Age", f"{analyzer.avg_age():.1f}")
 st.metric("Median Age", f"{analyzer.median_age():.0f}")

@@ -1,0 +1,14 @@
+@"
+# generated outputs
+*.xlsx
+employee.db
+Employee_1000x_Cleaned.csv
+
+# python
+__pycache__/
+*.pyc
+.venv/
+
+# IDE
+.idea/
+"@ | Out-File -Encoding utf8 .gitignore
